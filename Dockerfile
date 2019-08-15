@@ -1,6 +1,6 @@
-FROM dev_ext as dev_HEP
-COPY --from=dev_ext $COMMON_BUILD_PREFIX $COMMON_BUILD_PREFIX
-COPY --from=dev_ext $COMMON_INSTALL_PREFIX $COMMON_INSTALL_PREFIX
+FROM bars21/dev_hep_root as dev_hep_geant
+COPY --from=bars21/dev_hep_root $COMMON_BUILD_PREFIX $COMMON_BUILD_PREFIX
+COPY --from=bars21/dev_hep_root $COMMON_INSTALL_PREFIX $COMMON_INSTALL_PREFIX
 
 # CLHEP
 RUN source $COMMON_INSTALL_PREFIX/usr/setup.sh && \
