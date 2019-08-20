@@ -17,10 +17,10 @@ RUN source $COMMON_INSTALL_PREFIX/usr/setup.sh && \
     echo 'export CLHEP_BASE_DIR=$COMMON_INSTALL_PREFIX' >> $COMMON_INSTALL_PREFIX/usr/setup.sh && \
     echo 'export CLHEP_INCLUDE_DIR=$COMMON_INSTALL_PREFIX/include' >> $COMMON_INSTALL_PREFIX/usr/setup.sh && \
     echo 'export CLHEP_LIBRARY=$COMMON_INSTALL_PREFIX/lib' >> $COMMON_INSTALL_PREFIX/usr/setup.sh && \
-    echo 'export CLHEP_LIB_DIR=$COMMON_INSTALL_PREFIX/lib' >> $COMMON_INSTALL_PREFIX/usr/setup.sh && \
+    echo 'export CLHEP_LIB_DIR=$COMMON_INSTALL_PREFIX/lib' >> $COMMON_INSTALL_PREFIX/usr/setup.sh
 # GEANT4 10.*
 ENV G4_VER=10.05.p01
-RUN source $COMMON_INSTALL_PREFIX/setup.sh && \
+RUN source $COMMON_INSTALL_PREFIX/usr/setup.sh && \
     cd $COMMON_BUILD_PREFIX && \
     wget http://geant4.cern.ch/support/source/geant4.${G4_VER}.tar.gz && \
     tar -xzf geant4.10.*.tar.gz && \
@@ -43,4 +43,4 @@ RUN source $COMMON_INSTALL_PREFIX/setup.sh && \
     echo 'export GEANT4_INSTALL_BIN=$COMMON_INSTALL_PREFIX/bin' >> $COMMON_INSTALL_PREFIX/usr/setup.sh &&\
     echo 'export GEANT4_LIBRARY=$COMMON_INSTALL_PREFIX/lib64' >> $COMMON_INSTALL_PREFIX/usr/setup.sh &&\
     echo 'export GEANT4_LIBRARY_DIR=$COMMON_INSTALL_PREFIX/lib64' >> $COMMON_INSTALL_PREFIX/usr/setup.sh &&\
-    echo 'export LD_LIBRARY_PATH=$COMMON_INSTALL_PREFIX/lib64:$COMMON_BUILD_PREFIX/lib:$LD_LIBRARY_PATH' >> $COMMON_INSTALL_PREFIX/usr/setup.sh &&\
+    echo 'export LD_LIBRARY_PATH=$COMMON_INSTALL_PREFIX/lib64:$COMMON_BUILD_PREFIX/lib:$LD_LIBRARY_PATH' >> $COMMON_INSTALL_PREFIX/usr/setup.sh
