@@ -3,7 +3,7 @@ COPY --from=bars21/dev_base $COMMON_BUILD_PREFIX $COMMON_BUILD_PREFIX
 COPY --from=bars21/dev_base $COMMON_INSTALL_PREFIX $COMMON_INSTALL_PREFIX
 
 # GEANT4 10.*
-ENV G4_VER=10.01.p03
+ENV G4_VER=10.07.p01
 RUN source $COMMON_INSTALL_PREFIX/setup.sh && \
     cd $COMMON_BUILD_PREFIX && \
     wget http://cern.ch/geant4-data/releases/geant4.${G4_VER}.tar.gz && \
